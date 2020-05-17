@@ -1,6 +1,7 @@
 # Tripuracovid19-tracker
 <a href="https://thecodezine.com" rel="dofollow">An Open source Covid-19 India/Tripura Real time tracker, analysis &amp; live updates</a> build by Tripura Coders Community
-Features:
+
+* Key Features:
 1. Live Covid-19 India Updates
 2. Statewise corona Updates
 3. Covid-19 Latest Zones
