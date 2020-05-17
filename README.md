@@ -11,6 +11,5 @@
 <center><h4>Screenshot</h4></center>
 <center><img src="https://raw.githubusercontent.com/jupiterdv/Tripuracovid19-tracker/master/screenshot-thecodezine.com-2020.05.18-04_03_57.png" alt=" Open source Covid-19 India/Tripura Real time tracker" width="auto" height="auto"></center>
 <hr>
-<center><img src="https://www.thecodezine.com/covid19/pic2.png" alt=" Open source Covid-19 India/Tripura Real time tracker" width="300" height="300"></center>
-
+\
 For any queries regarding this project mail at thecodezine@gmail.com
