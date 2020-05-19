@@ -1,5 +1,5 @@
 # Tripuracovid19-tracker
-<a href="https://thecodezine.com/covid19" rel="dofollow">An Open source Covid-19 India/Tripura Real time tracker, analysis & live updates</a>
+<a href="https://thecodezine.com/covid19" rel="external">An Open source Covid-19 India/Tripura Real time tracker, analysis & live updates</a>
  build with pure javascript. An project by Tripura Coders Community.
 
 * Key Features:
