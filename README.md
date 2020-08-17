@@ -14,3 +14,4 @@ An Open source Covid-19 India/Tripura Real time tracker, analysis & live updates
 <hr>
 
 * For any queries regarding this project mail at thecodezine@gmail.com
+Live Script https://thecodezine.com/covid19/pic2.png
