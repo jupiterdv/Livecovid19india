@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+
+<html lang="en"> <head> 
+<script>
+function showResult(str) {
+  if (str.length==0) {
+    document.getElementById("livesearch").innerHTML="";
+    document.getElementById("livesearch").style.border="1px solid #243aff";
+    return;
+  }
+  var xmlhttp=new XMLHttpRequest();
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("livesearch").innerHTML=this.responseText;
+      document.getElementById("livesearch").style.border="1px solid #243aff";
+    }
+  }
+  xmlhttp.open("GET","livesearch.php?q="+str,true);
+  xmlhttp.send();
+}
+</script>
+
+<meta charset="UTF-8" /> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+<link rel="icon" href="pic2.png" sizes="any" type="image/svg+xml">
+<meta name="theme-color" content="#000">
+  <meta name="description" content="Covid-19 India Live Updates-Realtime Covid-19 Tracker. Get live & accurate covid-19 india realtime updates along with states live updates. Also get regular updates on India's district covid-19 situation & zones ">
+  <meta name="keywords" content="Corona Virus Tracker, Covid-19 India Tracker , Covid-19 Tracker">
+  <meta name="author" content="Tiprasa Coders Community">
+ 
+    <link rel="icon" type="image/png" href="./images/1icon_32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="./images/1icon_16.png" sizes="16x16">
+    <link rel="icon" href="./images/pic.png" sizes="16x16 32x32" type="image/png">
+   
+
+
+
+
+   
+
+<!-- Bootstrap CSS --> <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" /> <!--Bootstrap JS --> 
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script> 
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> 
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> <!-- Font Awesome -->
+
+<script src="https://kit.fontawesome.com/996973c893.js" crossorigin="anonymous" ></script>
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+
+<style>
+
+
+body {
+  margin: 0;
+  font-family: "courier", cursive ;
+  font-size: 15px;
+  background-color: transparent!important;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #696666;
+   padding: 14px 16px;
+  color: black;
+}
+.hr {
+    color: white;
+}
+
+.topnav a.active {
+  background-color: #fff;
+   padding: 14px 16px;
+  color: white;
+}
+.topnav a.translator {
+  background-color: #fff;
+  color: white;
+}
+.topnav a.translator {
+  background-color:#343a40;
+   padding: 14px 16px;
+  color: white;
+}
+
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background-color: transparent!important;
+    border-radius: 5px; /* 5px rounded corners */
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.confirmed{
+     background-color: #ff384c;
+     padding: 2px 16px;
+      border-radius: 5px;
+}
+.active{
+     background-color: #6159ff;
+     padding: 2px 16px;
+     border-radius: 5px;
+     
+}
+
+.recover{
+     background-color: #04db04;
+     padding: 2px 16px;
+     border-radius: 5px;
+}
+.deaths{
+     background-color: #9d9e9d;
+     padding: 2px 16px;
+     border-radius: 5px;
+}
+
+
+#google_translate_element img
+        {
+            display: none !important;
+        }
+        
+    .goog-te-banner-frame.skiptranslate {
+        border: 2px solid black;
+    display: none !important;
+    
+    } 
+  @import url(https://fonts.googleapis.com/css?family=Lato);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+
+a {
+    text-decoration: none;
+    color: #ff2424;
+}
+ a:hover{
+    color: #bfbdbd;
+    text-decoration:  none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin:  1% 0 1% 0;
+}
+._12 {
+    font-size: 1.2em;
+}
+._14 {
+    font-size: 1.4em;
+}
+ul {
+    padding:0;
+    list-style: none;
+}
+.footer-social-icons {
+    width: 350px;
+    display:block;
+    margin: 0 auto;
+}
+.social-icon {
+    color: #fff;
+}
+ul.social-icons {
+    margin-top: 10px;
+}
+.social-icons li {
+    vertical-align: top;
+    display: inline;
+    height: 100px;
+}
+.social-icons a {
+    color: #fff;
+    text-decoration: none;
+}
+.fa-facebook {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-facebook:hover {
+    background-color: #3d5b99;
+}
+.fa-twitter {
+    padding:10px 12px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-twitter:hover {
+    background-color: #00aced;
+}
+.fa-rss {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-rss:hover {
+    background-color: #eb8231;
+}
+.fa-youtube {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-youtube:hover {
+    background-color: #e64a41;
+}
+.fa-linkedin {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-linkedin:hover {
+    background-color: #0073a4;
+}
+.fa-github {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-github:hover {
+    background-color: #5a32a3;
+}
+
+
+  
+[data-theme="dark"] {
+  background-color: #111 !important;
+  color: #eee;
+}
+
+[data-theme="dark"] .bg-light {
+  background-color: #333 !important;
+}
+
+[data-theme="dark"] .bg-white {
+  background-color: #000 !important;
+}
+
+[data-theme="dark"] .bg-black {
+  background-color: #eee !important;
+}
+
+input
+	{
+		padding: 5px;
+		border-radius: 10px;
+		border-style: solid;
+		border-color: red;
+		transition-duration: 0.5s;
+		width: 80%;
+	}
+	input:focus
+	{
+		border-color: red;
+		transition-duration: 0.5s;
+	}
+
+</style>
+
+<script>
+
+
+$(document).ready(function () {  $.getJSON("https://api.covid19india.org/data.json", function (data) { var states = []; var confirmed = []; var recovered = []; var deaths = []; var total_active; var total_confirmed; var total_recovered; var total_deaths;  total_active = data.statewise[0].active; total_confirmed = data.statewise[0].confirmed; total_recovered = data.statewise[0].recovered; total_deaths = data.statewise[0].deaths;  $.each(data.statewise, function (id, obj) { states.push(obj.state); confirmed.push(obj.confirmed); recovered.push(obj.recovered); deaths.push(obj.deaths); }); states.shift(); confirmed.shift(); recovered.shift();deaths.shift();  $("#confirmed").append(total_confirmed); $("#active").append(total_active); $("#recovered").append(total_recovered); $("#deaths").append(total_deaths);  var myChart = document.getElementById("chartbar").getContext("2d"); var chart = new Chart(myChart, { type: "line", fill: true,
+backgroundColor: "rgba(244, 144, 128, 0.8)",data: { labels: states, datasets: [ { label: "Confirm No", data: confirmed, backgroundColor: "#ff384c", minBarLength: 100, }, { label: "Recover No", data: recovered, backgroundColor: "#04db04", minBarLength: 100, }, { label: "Deaths No", data: deaths, backgroundColor: "#9d9e9d", minBarLength: 100, }, ], }, option: {}, }); });});
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+
+
+</script>
+<script>
+
+
+$(document).ready(function () {  $.getJSON("https://api.covid19india.org/data.json", function (data) { var deltastates = []; var deltaconfirmed = []; var deltarecovered = []; var deltadeaths = [];  var total_deltaconfirmed; var total_deltarecovered; var total_deltadeaths;  total_deltaconfirmed = data.statewise[0].deltaconfirmed; total_deltarecovered = data.statewise[0].deltarecovered; total_deltadeaths = data.statewise[0].deltadeaths;  $.each(data.statewise, function (id, obj) { deltastates.push(obj.state); deltaconfirmed.push(obj.deltaconfirmed); deltarecovered.push(obj.deltarecovered); deltadeaths.push(obj.deltadeaths); }); deltastates.shift(); deltaconfirmed.shift(); deltarecovered.shift(); deltadeaths.shift();   var myChart = document.getElementById("chartbar1").getContext("2d"); var chart = new Chart(myChart, { type: "line", fill: true,
+backgroundColor: "rgba(244, 144, 128, 0.8)", borderColor: 'rgba(33, 232, 234, 1)',
+      borderWidth: 1,
+      fill: false,data: { labels: deltastates, datasets: [ { label: "Daily Confirm No", data: deltaconfirmed, backgroundColor: "#a303ff", minBarLength: 100, }, { label: "Daily Recover No", data: deltarecovered, backgroundColor: "#ff039a", minBarLength: 100, }, { label: "Daily Deaths No", data: deltadeaths, backgroundColor: "#ffd70f", minBarLength: 100, }, ], }, option: {}, }); });});
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+
+
+</script>
+
+
+<!-- Google Fonts --> 
+
+<!-- My Stylesheet --> 
+
+<!-- Chart.js --> 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script src="https://thecodezine.com/covid19/animated.js"></script><title>Covid-19 India Live Updates- Real time tracker</title> 
+
+</head> 
+
+<body onload="fetch();">
+<div align="center"> <a href="https://www.thecodezine.com/covid19">
+<img border="0" src="pic2.png" alt="Corona live update" style="width:100px;height:100px;"></a></div>
+ 
+<div class="container-fluid bg-transparent p-5 text-center my-3"> 
+
+ <div class="custom-control custom-switch" align="right">
+            <input type="checkbox" class="custom-control-input" id="darkSwitch">
+       
+            <label class="custom-control-label" for="darkSwitch">Mode</label>
+          </div> 
+ 
+<div class="topnav" id="myTopnav">
+
+
+
+  <a href="#home" class="active"> <img border="0" src="corona.png" alt="Corona live update" style="width:20px;height:20px;"></a></a>
+  
+   
+  <a href="https://thecodezine.com/covid19/statewise.php">Statewise Live Updates</a>
+  <a href="https://thecodezine.com/covid19/distind.php">Districtwise Live Updates</a>
+<a href="https://thecodezine.com/covid19/analytics.php">Time Series</a>
+
+  <a href="https://thecodezine.com/covid19/zones.php">Covid-19 Zones Updates</a>
+  <a href="https://thecodezine.com/covid19/enquiry.php">Enquiry Helpline</a>
+   <a href="https://thecodezine.com/covid19/tripura.php">Tripura Live Updates</a>
+   <a href="https://covid19.thecodezine.com/world/">Global Live Updates</a>
+   <a href="https://thecodezine.com/covid19/testing.php">Testing Report</a>
+  
+   <a href="https://thecodezine.com/covid19/survey.php">Covid-19 Survey</a>
+   
+<a href="https://thecodezine.com/covid19/about.php">FAQ/About</a>
+
+
+
+   
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+</div> 
+
+
+<div align="center">
+   <a href="https://www.paypal.me/jupiterdebbarma" class="btn btn-default btn btn-danger"><i class="fas fa-hand-holding-heart"></i><strong>Donate!</strong></a>
+   <hr>
+    <form>
+<input type="text" size="35"  placeholder="🔍 Search Here..." onkeyup="showResult(this.value)">
+<div id="livesearch"></div>
+</form>
+</div>
+
+
+
+<div align="center" class="container my-3">
+   
+
+
+<div align="center"><p  id="LUD" ></p> </div>		
+	
+
+<div class="card"> <div class="confirmed"><h4 style="color:#fff;"><b>Confirmed 😟 </b></h4></div><p style="color:#f54242;">[+]</p><p  id="TC" style="color:#f54242;"></p>
+
+<div class="confirmed">
+<h4 id="confirmed" style="color:#fff;"></h4></div> </div>
+<hr>
+
+<div class="card"> <div class="active"><h4 style="color:#fff;"><b>Active 😓</b></h4></div><p style="color:#6159ff;">[+]</p><p style="color:#6159ff;">*</p><div class="active"> <h4 id="active" style="color:#fff;"></h4> </div>
+
+</div>
+<hr>
+<div class="card">  <div class="recover"><h4 style="color:#fff;"><b>Recovered 😃</b></h4></div><p style="color:#04db04;">[+]</p><p id="TR" style="color:#04db04;"></p></b> 
+<div class="recover">
+<h4 id="recovered" style="color:#fff;"></h4> </div></div>
+<hr>
+<div class="card"> <div class="deaths"> <h4 style="color:#fff;"><b>Deceased 😢</b></h4></div><p style="color:#9d9e9d;">[+]</p><p  id="TD" style="color:#9d9e9d;"></p></b></p> 
+<div class="deaths">
+<h4 id="deaths" style="color:#fff;"></h4> </div> </div> </div> 
+
+
+
+<hr>
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- covid19 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1072434877178884"
+     data-ad-slot="5958762593"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<center>
+     <div align="center">  <iframe src="https://vm.di91.com/" ref="nofollow" id="statewise" scrolling="no" frameBorder="0" width="100%" height="700"></iframe></div>
+  
+    <h5 class=" border border-danger">*Covid-19 India Analysis*</h5></center>
+<hr>
+
+<canvas id="chartbar"></canvas>
+
+<canvas id="chartbar1"></canvas>
+<div class="container text-center my-5"> 
+
+
+<h6 class="border border-danger"> *Click on the bar to see state data individually.* </h6> </div> 
+<hr>
+<section class=" corona-update container-fluid">
+	<div class="mb-4">
+		
+	</div>
+	<!--All India-->
+	<div class="row text-center">
+
+</div>
+
+<!--SEARCH BOX-->
+<div class="text-center">
+   
+	
+</div>
+<!--TABLE HEADING-->
+<div class="text-center table-responsive">
+	<table class="table table-bordered table-striped table-transparent text-secondary" id="corona_table">
+		<tr>
+			
+			<th bgcolor="#f59e42"> State</th>
+			<th bgcolor="#ffcc24"> Last update</th>
+			<th bgcolor="#ff2929">Confirmed</th>
+			<th bgcolor="#ff2929">[+]</th>
+			<th bgcolor="#2930ff">Active</th>
+			<th bgcolor="#29ff2d">Recovered </th>
+			<th bgcolor="#29ff2d">[+]</th>
+			<th bgcolor="#9d9e9d">Deaths</th>
+			
+			<th bgcolor="#9d9e9d">[+]</th>
+			
+		</tr>
+		</table>
+</div>
+</section>
+<!--Access the data statewise from API-->
+<?php 
+
+
+//HERE IS THE ALTERNATIVE OF ABOVE WORK
+		$x = 'https://api.covid19india.org/data.json';
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $x);
+    curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
+    $content = curl_exec ($ch);
+    curl_close ($ch); 
+    $json=json_decode($content,true);//decode it using json
+	$state=$json['statewise'];//state data -->
+	// echo "<pre>";
+ //    print_r($state);
+
+	 ?>
+<script type="text/javascript">
+var corona_table = document.getElementById('corona_table');//take table
+/*Passing php states array to  javascript variable*/	
+	var state = <?php echo json_encode($state); ?>;
+	for(i=1;i<(state.length);i++){
+
+	  var y=corona_table.insertRow();//row insert
+	  //Data insertion
+	  y.insertCell(0);
+	corona_table.rows[i].cells[0].innerHTML= state[i]['state'];	
+
+	y.insertCell(1);
+	corona_table.rows[i].cells[1].innerHTML= state[i]['lastupdatedtime'];	
+
+	y.insertCell(2);
+	corona_table.rows[i].cells[2].innerHTML= state[i]['confirmed'];	
+
+	y.insertCell(3);
+	corona_table.rows[i].cells[3].innerHTML= state[i]['deltaconfirmed'];	
+
+	y.insertCell(4);
+	corona_table.rows[i].cells[4].innerHTML= state[i]['active'];	
+
+	y.insertCell(5);
+	corona_table.rows[i].cells[5].innerHTML= state[i]['recovered'];
+	
+	y.insertCell(6);
+	corona_table.rows[i].cells[6].innerHTML= state[i]['deltarecovered'];
+	
+	y.insertCell(7);
+	corona_table.rows[i].cells[7].innerHTML= state[i]['deaths'];
+	
+    y.insertCell(8);
+	corona_table.rows[i].cells[8].innerHTML= state[i]['deltadeaths'];
+
+		
+	}
+
+/*All India Data*/
+document.getElementById('TC').innerHTML =state[0]['deltaconfirmed'];
+	 
+document.getElementById('TR').innerHTML =state[0]['deltarecovered'];	 
+document.getElementById('TD').innerHTML =state[0]['deltadeaths'];
+document.getElementById('LUD').innerHTML =state[0]['lastupdatedtime'];
+
+
+</script>
+<script>
+/*For search box*/
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("corona_table");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+
+
+
+</script>
+
+<footer class="footer mt-5 py-3 bg-muted text-light " align="center">
+   
+    
+<div id="google_translate_element" align="center"></div>
+<hr>
+          <script>
+              
+              const darkSwitch = document.getElementById('darkSwitch');
+window.addEventListener('load', () => {
+  if (darkSwitch) {
+    initTheme();
+    darkSwitch.addEventListener('change', () => {
+      resetTheme();
+    });
+  }
+});
+
+
+/**
+ * Summary: function that adds or removes the attribute 'data-theme' depending if
+ * the switch is 'on' or 'off'.
+ *
+ * Description: initTheme is a function that uses localStorage from JavaScript DOM,
+ * to store the value of the HTML switch. If the switch was already switched to
+ * 'on' it will set an HTML attribute to the body named: 'data-theme' to a 'dark'
+ * value. If it is the first time opening the page, or if the switch was off the
+ * 'data-theme' attribute will not be set.
+ * @return {void}
+ */
+function initTheme() {
+  const darkThemeSelected =
+    localStorage.getItem('darkSwitch') !== null &&
+    localStorage.getItem('darkSwitch') === 'dark';
+  darkSwitch.checked = darkThemeSelected;
+  darkThemeSelected ? document.body.setAttribute('data-theme', 'dark') :
+    document.body.removeAttribute('data-theme');
+}
+
+
+/**
+ * Summary: resetTheme checks if the switch is 'on' or 'off' and if it is toggled
+ * on it will set the HTML attribute 'data-theme' to dark so the dark-theme CSS is
+ * applied.
+ * @return {void}
+ */
+function resetTheme() {
+  if (darkSwitch.checked) {
+    document.body.setAttribute('data-theme', 'dark');
+    localStorage.setItem('darkSwitch', 'dark');
+  } else {
+    document.body.removeAttribute('data-theme');
+    localStorage.removeItem('darkSwitch');
+  }
+}
+          </script>
+
+
+    <div id="google_translate_element" align="center"></div>
+ 
+   <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en', includedLanguages: 'en,hi,bn',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    
+    
+	    <div class="footer-social-icons" align="center">
+    <h5 class="text-danger"><strong>Follow us on</strong></h5>
+    <ul class="social-icons">
+        <li><a href="https://facebook.com/thecodezine" class="social-icon"> <i class="fa fa-facebook"></i></a></li>
+        <li><a href="" class="social-icon"> <i class="fa fa-twitter"></i></a></li>
+   
+        <li><a href="" class="social-icon"> <i class="fa fa-youtube"></i></a></li>
+       
+    </ul>
+</div>
+    
+    
+    
+     <div class="container text-center"><span class="text-primary" >Built by Proud Indian 🇮🇳 & Proud Tripuri.</span> <span class="text-primary" >Copyright &copy;2020,<a href="https://thecodezine.com" target="_blank">TCC</a></span > </div> 
+</footer> 
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+<script src="jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+    //Disable cut copy paste
+    $('body').bind('cut copy paste', function (e) {
+        e.preventDefault();
+        
+    });
+   
+    //Disable mouse right click
+    $("body").on("contextmenu",function(e){
+         alert('Sorry Inspect not allowed!');
+        return false;
+    });
+});
+</script>
+
+ 
+ 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+   
+</body></html>
+
+<!-- CODE BY DARK SOULZ -->
