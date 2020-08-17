@@ -1,24 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en"> <head> 
-<script>
-function showResult(str) {
-  if (str.length==0) {
-    document.getElementById("livesearch").innerHTML="";
-    document.getElementById("livesearch").style.border="1px solid #243aff";
-    return;
-  }
-  var xmlhttp=new XMLHttpRequest();
-  xmlhttp.onreadystatechange=function() {
-    if (this.readyState==4 && this.status==200) {
-      document.getElementById("livesearch").innerHTML=this.responseText;
-      document.getElementById("livesearch").style.border="1px solid #243aff";
-    }
-  }
-  xmlhttp.open("GET","livesearch.php?q="+str,true);
-  xmlhttp.send();
-}
-</script>
+
 
 <meta charset="UTF-8" /> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -556,7 +539,7 @@ function resetTheme() {
     
     
     
-     <div class="container text-center"><span class="text-primary" >Built by Proud Indian 🇮🇳 & Proud Tripuri.</span> <span class="text-primary" >Copyright &copy;2020,<a href="https://thecodezine.com" target="_blank">TCC</a></span > </div> 
+     <div class="container text-center"><span class="text-primary" >Built by <a href="https://thecodezine.com">The Codezine</a></span> <span class="text-primary" >Copyright &copy;2020,<a href="https://thecodezine.com" target="_blank">TCC</a></span > </div> 
 </footer> 
 
 <script>
