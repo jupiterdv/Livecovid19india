@@ -311,7 +311,7 @@ input
 
 <script>
 
-
+//** replace with your api
 $(document).ready(function () {  $.getJSON("https://api.covid19india.org/data.json", function (data) { var states = []; var confirmed = []; var recovered = []; var deaths = []; var total_active; var total_confirmed; var total_recovered; var total_deaths;  total_active = data.statewise[0].active; total_confirmed = data.statewise[0].confirmed; total_recovered = data.statewise[0].recovered; total_deaths = data.statewise[0].deaths;  $.each(data.statewise, function (id, obj) { states.push(obj.state); confirmed.push(obj.confirmed); recovered.push(obj.recovered); deaths.push(obj.deaths); }); states.shift(); confirmed.shift(); recovered.shift();deaths.shift();  $("#confirmed").append(total_confirmed); $("#active").append(total_active); $("#recovered").append(total_recovered); $("#deaths").append(total_deaths);  var myChart = document.getElementById("chartbar").getContext("2d"); var chart = new Chart(myChart, { type: "line", fill: true,
 backgroundColor: "rgba(244, 144, 128, 0.8)",data: { labels: states, datasets: [ { label: "Confirm No", data: confirmed, backgroundColor: "#ff384c", minBarLength: 100, }, { label: "Recover No", data: recovered, backgroundColor: "#04db04", minBarLength: 100, }, { label: "Deaths No", data: deaths, backgroundColor: "#9d9e9d", minBarLength: 100, }, ], }, option: {}, }); });});
 function myFunction() {
@@ -420,17 +420,7 @@ function myFunction() {
 
 
 <hr>
- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- covid19 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1072434877178884"
-     data-ad-slot="5958762593"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+ 
 <center>
      <div align="center">  <iframe src="https://vm.di91.com/" ref="nofollow" id="statewise" scrolling="no" frameBorder="0" width="100%" height="700"></iframe></div>
   
@@ -494,12 +484,7 @@ function initTheme() {
 }
 
 
-/**
- * Summary: resetTheme checks if the switch is 'on' or 'off' and if it is toggled
- * on it will set the HTML attribute 'data-theme' to dark so the dark-theme CSS is
- * applied.
- * @return {void}
- */
+
 function resetTheme() {
   if (darkSwitch.checked) {
     document.body.setAttribute('data-theme', 'dark');
